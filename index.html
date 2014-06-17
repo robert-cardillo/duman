@@ -28,7 +28,7 @@
 		}
 		</style>
 	</head>
-	<body>
+	<body onunload="app.disconnect()">
 		<!-- Modal dialog -->
 		<div id="loginModal" class="modal fade" data-keyboard="false" data-backdrop="static">
 			<div class="modal-dialog modal-sm">
@@ -159,6 +159,9 @@
 				chat: function(message){
 					chat(nick, message);
 					socket.emit('chat', message);
+				},
+				disconnect: function(){
+					socket.disconnect();
 				}
 			};
 			
