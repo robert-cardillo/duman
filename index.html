@@ -61,7 +61,7 @@
 		<script>
 		var app = (function(){
 			var nick;
-			var socket = io(':8000');
+			var socket = io('http://duman-bulut.rhcloud.com:8000');
 			
 			socket.on('data', function(data){
 				for(var nick in data){

@@ -2,7 +2,7 @@ var app = require('http').Server(handler)
   , io = require('socket.io')(app)
   , fs = require('fs');
 
-app.listen(process.env.OPENSHIFT_NODEJS_PORT || 8000, process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1');
+app.listen(process.env.OPENSHIFT_NODEJS_PORT || 80, process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1');
 
 function handler (req, res) {
   fs.readFile(__dirname + '/index.html',
